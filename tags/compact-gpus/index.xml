@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compact GPUs on Love For SFF</title>
+    <link>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</link>
+    <description>Recent content in Compact GPUs on Love For SFF</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/loveforSFF.com/tags/compact-gpus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Compact GPUs for Small Form Factor (SFF) Builds in 2024</title>
+      <link>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</guid>
+      <description>&lt;p&gt;When building a small form factor (SFF) PC, one of the most critical components to consider is the GPU. Compact GPUs are essential for fitting into tight spaces while still delivering excellent performance. In this article, we’ll explore the &lt;strong&gt;best compact GPUs for SFF builds in 2024&lt;/strong&gt;, focusing on performance, size, and value.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-nvidia-geforce-rtx-4060-ti-compact-edition&#34;&gt;&lt;strong&gt;1. NVIDIA GeForce RTX 4060 Ti (Compact Edition)&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;key-features&#34;&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;GPU:&lt;/strong&gt; NVIDIA Ada Lovelace Architecture&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;VRAM:&lt;/strong&gt; 8GB GDDR6&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Length:&lt;/strong&gt; 200mm&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Power Consumption:&lt;/strong&gt; 160W&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The &lt;strong&gt;NVIDIA GeForce RTX 4060 Ti&lt;/strong&gt; is a powerhouse in a compact form factor. With its efficient Ada Lovelace architecture, this GPU delivers excellent 1080p and 1440p gaming performance while staying cool and quiet. Its 200mm length makes it perfect for most SFF cases.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,171 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #555;
+    --accent-color: #960000;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --link-color: #b10000;
+    --link-hover-color: #642121;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+#navLogo{
+    width: 130px;
+    height: 150px;
+    margin-left: auto;
+    display: flex; /* Ensure the div is displayed as a flex container */
+    align-items: center; /* Center the logo vertically */
+    justify-content: center; /* Center the logo horizontally */
+
+}
+#navLogo img{
+    object-fit: contain;
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    max-height: 100%; /* Ensure the image doesn't overflow */
+}
+#headerMain{
+    display: flex;
+    margin: 0 auto;
+}
+#titleImage{
+    margin-top:20px ;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#titleImage img{
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#headerContainer {
+    margin-left: 40px; /* Adjust as needed */
+    flex-grow: 1; /* Allow the container to take up remaining space */
+}
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Center items vertically */
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.search-container {
+    margin-top: 10px;
+}
+
+.search-container input {
+    padding: 5px;
+    width: 200px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: var(--secondary-color);
+}
+#search-results {
+    list-style: none;
+    padding: 0;
+}
+
+#search-results li {
+    margin: 10px 0;
+}
+
+#search-results a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+#search-results a:hover {
+    color: var(--link-hover-color);
+}
+
+article {
+    background-color: #fff;
+    padding: 20px 60px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+article a:hover {
+    color: var(--link-hover-color);
+}
+/* Blog post image styling */
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust as needed */
+    object-fit: cover; /* Ensures the image scales properly */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
