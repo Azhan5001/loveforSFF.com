@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let pagesIndex;
 
     // Fetch the search index
-    fetch('/index.json')
+    fetch('/loveforSFF.com/index.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -17,20 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             pagesIndex = data;
 
-            // Initialize Lunr.js with partial matching
             lunrIndex = lunr(function () {
                 this.ref('url');
                 this.field('title', { boost: 10 });
                 this.field('content');
 
+                // Remove the stemmer for better partial matching
+                this.pipeline.remove(lunr.stemmer);
+
                 // Add documents to the index
                 pagesIndex.forEach(page => {
                     this.add(page);
                 });
-
-                // Enable partial matching
-                this.pipeline.remove(lunr.stemmer); // Optional: Remove stemmer for better partial matching
-                this.searchPipeline.remove(lunr.stemmer); // Optional: Remove stemmer from search pipeline
             });
         })
         .catch(error => {
@@ -39,7 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Search function with partial matching
     function performSearch(query) {
-        // Add a wildcard to the query for partial matching
+        if (!lunrIndex) {
+            console.error('Search index not loaded yet');
+            return [];
+        }
+
+        // Add wildcard for partial matching
         const wildcardQuery = query.split(' ').map(term => `${term}*`).join(' ');
         return lunrIndex.search(wildcardQuery).map(result => {
             return pagesIndex.find(page => page.url === result.ref);
@@ -66,22 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for the search button
     searchButton.addEventListener('click', () => {
         const query = searchInput.value.trim();
-        if (query.length > 0) {
-            const results = performSearch(query);
-            displayResults(results);
-        } else {
-            searchResults.innerHTML = '';
+        if (query.length === 0) {
+            searchResults.innerHTML = '<li>Start typing to search...</li>';
+            return;
         }
+        const results = performSearch(query);
+        displayResults(results);
     });
 
-    // Optional: Add live search as the user types
+    // Live search as the user types
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.trim();
-        if (query.length > 0) {
-            const results = performSearch(query);
-            displayResults(results);
-        } else {
-            searchResults.innerHTML = '';
+        if (query.length === 0) {
+            searchResults.innerHTML = '<li>Start typing to search...</li>';
+            return;
         }
+        const results = performSearch(query);
+        displayResults(results);
     });
 });
