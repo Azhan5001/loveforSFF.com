@@ -1,82 +1,119 @@
 document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedPosition = JSON.parse(localStorage.getItem('themeTogglePosition'));
 
-    let savedTheme = localStorage.getItem('theme') || 'light';
+    let isDragging = false;
+    let offsetX, offsetY, startX, startY;
+
+    // Apply saved theme
     document.body.setAttribute('data-theme', savedTheme);
     themeIcon.textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
 
-    let savedPosition = JSON.parse(localStorage.getItem('themeButtonPosition'));
-    if (savedPosition) {
-        themeToggle.style.left = `${savedPosition.x}px`;
-        themeToggle.style.top = `${savedPosition.y}px`;
-    } else {
-        themeToggle.style.left = `calc(100% - 60px)`; // Default position (top-right)
-        themeToggle.style.top = `70px`; // Below header
+    // Apply saved or default position (top-right below header)
+    themeToggle.style.position = 'fixed';
+    themeToggle.style.right = savedPosition ? savedPosition.right : '20px';
+    themeToggle.style.top = savedPosition ? savedPosition.top : '60px';
+
+    // Get screen boundaries
+    function getBounds() {
+        return {
+            minX: 0,
+            maxX: window.innerWidth - themeToggle.offsetWidth,
+            minY: 0,
+            maxY: window.innerHeight - themeToggle.offsetHeight
+        };
     }
 
-    let isDragging = false;
-    let startX, startY, startLeft, startTop;
-    let touchStartTime = 0;
-
+    // Handle Mouse & Touch Events
     function startDrag(e) {
-        isDragging = false; // Reset dragging state
-        touchStartTime = new Date().getTime(); // Record touch start time
-
-        startX = e.clientX || e.touches[0].clientX;
-        startY = e.clientY || e.touches[0].clientY;
-        startLeft = parseInt(themeToggle.style.left) || 0;
-        startTop = parseInt(themeToggle.style.top) || 0;
-
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', stopDrag);
-        document.addEventListener('touchmove', drag, { passive: false });
-        document.addEventListener('touchend', stopDrag);
-    }
-
-    function drag(e) {
-        isDragging = true; // Mark as dragging
         e.preventDefault();
+        isDragging = false;
 
-        let currentX = e.clientX || e.touches[0].clientX;
-        let currentY = e.clientY || e.touches[0].clientY;
+        const event = e.touches ? e.touches[0] : e;
+        offsetX = event.clientX - themeToggle.getBoundingClientRect().left;
+        offsetY = event.clientY - themeToggle.getBoundingClientRect().top;
+        startX = event.clientX;
+        startY = event.clientY;
 
-        let deltaX = currentX - startX;
-        let deltaY = currentY - startY;
-
-        themeToggle.style.left = `${startLeft + deltaX}px`;
-        themeToggle.style.top = `${startTop + deltaY}px`;
+        document.addEventListener(e.type === "touchstart" ? "touchmove" : "mousemove", onMove);
     }
 
-    function stopDrag(e) {
-        document.removeEventListener('mousemove', drag);
-        document.removeEventListener('mouseup', stopDrag);
-        document.removeEventListener('touchmove', drag);
-        document.removeEventListener('touchend', stopDrag);
+    function endDrag(e) {
+        document.removeEventListener("mousemove", onMove);
+        document.removeEventListener("touchmove", onMove);
 
-        let touchDuration = new Date().getTime() - touchStartTime; // Calculate tap duration
+        const event = e.changedTouches ? e.changedTouches[0] : e;
+        if (Math.abs(event.clientX - startX) > 5 || Math.abs(event.clientY - startY) > 5) {
+            isDragging = true;
+        }
 
-        if (!isDragging && touchDuration < 200) {
-            // If touch was short (<200ms), it's a tap
-            toggleTheme();
-        } else {
-            // If dragged, save position
-            localStorage.setItem(
-                'themeButtonPosition',
-                JSON.stringify({ x: parseInt(themeToggle.style.left), y: parseInt(themeToggle.style.top) })
-            );
+        if (!isDragging) {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.body.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
+            localStorage.setItem('theme', newTheme);
         }
     }
 
-    function toggleTheme() {
-        let currentTheme = document.body.getAttribute('data-theme');
-        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    function onMove(e) {
+        isDragging = true;
+        const event = e.touches ? e.touches[0] : e;
+        const bounds = getBounds();
 
-        document.body.setAttribute('data-theme', newTheme);
-        themeIcon.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
-        localStorage.setItem('theme', newTheme);
+        let newX = event.clientX - offsetX;
+        let newY = event.clientY - offsetY;
+
+        // Prevent moving out of bounds
+        newX = Math.max(bounds.minX, Math.min(newX, bounds.maxX));
+        newY = Math.max(bounds.minY, Math.min(newY, bounds.maxY));
+
+        themeToggle.style.left = newX + 'px';
+        themeToggle.style.top = newY + 'px';
+        themeToggle.style.right = 'auto';
     }
 
+    function savePosition() {
+        if (isDragging) {
+            localStorage.setItem(
+                'themeTogglePosition',
+                JSON.stringify({ 
+                    top: themeToggle.style.top, 
+                    right: window.innerWidth - themeToggle.getBoundingClientRect().right + 'px' 
+                })
+            );
+        }
+        isDragging = false;
+    }
+
+    function adjustPosition() {
+        const bounds = getBounds();
+        const rect = themeToggle.getBoundingClientRect();
+
+        let newLeft = parseInt(themeToggle.style.left) || rect.left;
+        let newTop = parseInt(themeToggle.style.top) || rect.top;
+
+        newLeft = Math.max(bounds.minX, Math.min(newLeft, bounds.maxX));
+        newTop = Math.max(bounds.minY, Math.min(newTop, bounds.maxY));
+
+        themeToggle.style.left = newLeft + 'px';
+        themeToggle.style.top = newTop + 'px';
+
+        localStorage.setItem('themeTogglePosition', JSON.stringify({ top: themeToggle.style.top, right: '20px' }));
+    }
+
+    // Attach Event Listeners
     themeToggle.addEventListener('mousedown', startDrag);
-    themeToggle.addEventListener('touchstart', startDrag, { passive: false });
+    themeToggle.addEventListener('touchstart', startDrag);
+
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchend', endDrag);
+
+    document.addEventListener('mouseup', savePosition);
+    document.addEventListener('touchend', savePosition);
+
+    window.addEventListener('resize', adjustPosition);
 });

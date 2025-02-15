@@ -15,6 +15,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    overflow-x: hidden;
 
 }
 h1, h2, h3{
@@ -58,6 +59,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#titleImageLogo {
+    display: none;
 }
 
 #titleImage img {
@@ -229,6 +233,10 @@ footer a:hover {
 
     #headerContainer {
         margin: auto 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
     article {
         padding: 20px 20px;
@@ -238,9 +246,38 @@ footer a:hover {
         margin: 0;
         width: 90vw;
     }
+
     .breadcrumb > .container{
         display: flex;
         justify-content: center;
+    }
+    #titleImageLogo{
+        display: block;
+        width: 200%;
+        margin: 0 10px;
+    }
+    #titleImage{
+        width: 240px;
+        margin-right: 5%;
+    }
+    #headerMain{
+        margin: 0;
+        width: 100%;
+    }
+    header nav{
+        width: 100%;
+        text-align: center;
+    }
+    header nav ul{
+        gap: 0;
+    
+    }
+    header nav ul :nth-child(3){
+        width: 110%;
+        margin: 0 6px;
+    }
+    header nav ul li{
+        width: 70%;
     }
 }
 
