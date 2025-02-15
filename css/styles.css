@@ -15,6 +15,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+
 }
 h1, h2, h3{
     font-size: 1.5rem;
@@ -24,6 +25,9 @@ p{
 }
 hr{
     margin: 70px 0;
+}
+main{
+    min-height: 100vh;
 }
 #navLogo {
     width: 130px;
@@ -385,11 +389,14 @@ footer a:hover {
 
 @media (max-width: 1200px) {
     .toc-container {
-        display: none;
+        position: static;
+        transform: translateY(0);
+        
     }
     .article-content {
         margin-left: 0;
     }
+    
 }
 html {
     scroll-behavior: smooth;
