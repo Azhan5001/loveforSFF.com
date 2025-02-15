@@ -244,7 +244,7 @@ footer a:hover {
     }
     .container{
         margin: 0;
-        width: 90vw;
+        width: 96vw;
     }
 
     .breadcrumb > .container{
@@ -278,6 +278,12 @@ footer a:hover {
     }
     header nav ul li{
         width: 70%;
+    }
+    .article-content{
+        font-size: 1rem;
+    }
+    article{
+        padding: 20px 10px;
     }
 }
 
