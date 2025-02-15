@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News - Love For SFF</title>
+    <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
     <link rel="stylesheet" href="/loveforSFF.com/css/styles.css" type="text/css">
+    <script src="/loveforSFF.com/js/search.js" defer></script>
+    <script src="/loveforSFF.com/js/theme.js"></script>
 </head>
 <body>
     <header>
@@ -28,12 +31,27 @@
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search...">
                 <button id="search-button">Search</button>
+                <div id="search-results-container">
+                    <ul id="search-results"></ul>
+                </div>
             </div>
             <ul id="search-results"></ul>
         </div>
     </div>
 </header>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<button id="theme-toggle" class="theme-toggle">
+    <span class="material-icons" id="theme-icon">dark_mode</span>
+</button>
+    
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="/loveforSFF.com/index.html">Home</a>
+            
+            
+            &gt; News
+        </div>
+    </nav>
     <main class="container">
         <h1>News</h1>
         <div class="article-list">
@@ -46,6 +64,7 @@
                             <a href="/loveforSFF.com/news/new-compact-gpus/">Read More</a>
                         </div>
                     </div>
+                </article>    
             
         </div>
     </main>

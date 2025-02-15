@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SFF Builds on Love For SFF</title>
-    <link>http://localhost:1313/loveforSFF.com/tags/sff-builds/</link>
-    <description>Recent content in SFF Builds on Love For SFF</description>
+    <title>Love For SFF</title>
+    <link>http://localhost:1313/loveforSFF.com/</link>
+    <description>Recent content on Love For SFF</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/loveforSFF.com/tags/sff-builds/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/loveforSFF.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Mini-ITX Cases for 2025</title>
+      <link>http://localhost:1313/loveforSFF.com/reviews/mini-itx-cases/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/reviews/mini-itx-cases/</guid>
+      <description>&lt;p&gt;In this article, we review the best mini-ITX cases available this year&amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Best Compact GPUs for Small Form Factor (SFF) Builds in 2024</title>
       <link>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</link>
@@ -28,6 +35,13 @@
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md/</guid>
       <description>&lt;p&gt;Building a Mini-ITX PC is a rewarding experience, but it comes with its own set of challenges—chief among them is &lt;strong&gt;cooling&lt;/strong&gt;. With limited space and high-performance components, keeping your system cool can be tricky. In this guide, we’ll walk you through the best practices for optimizing cooling in your Mini-ITX build.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-choose-the-right-case&#34;&gt;&lt;strong&gt;1. Choose the Right Case&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The foundation of good cooling starts with the case. Not all Mini-ITX cases are created equal when it comes to airflow. Look for cases with:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Budget SFF PC</title>
+      <link>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</guid>
+      <description>&lt;p&gt;This is the content of my first blog post.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
