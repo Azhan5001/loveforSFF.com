@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/loveforSFF.com/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=loveforSFF.com/livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Love For SFF</title>
+    <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+    <link rel="stylesheet" href="/loveforSFF.com/css/styles.css" type="text/css">
+    <script src="/loveforSFF.com/js/theme.js"></script>
+</head>
+<body>
+    <header>
+    <div id="headerMain">
+        <div id="navLogo">
+            <a href="/loveforSFF.com/index.html"><img src="/loveforSFF.com/images/whiteandblackLogoOnly.png" alt="logo.png"></a>
+        </div>
+        <div id="headerContainer">
+            <div id="titleImage">
+                <div id="titleImageLogo">
+                    <a href="/loveforSFF.com/index.html"><img src="/loveforSFF.com/images/whiteandblackLogoOnly.png" alt="logo.png"></a>
+                </div>
+                <a href="/loveforSFF.com/index.html"><img src="/loveforSFF.com/images/whiteandblackMainText.png" alt="LogoText"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/loveforSFF.com/index.html">Home</a></li>
+                    <li><a href="/loveforSFF.com/reviews/">Reviews</a></li>
+                    <li><a href="/loveforSFF.com/build-guides/">Build Guides</a></li>
+                    <li><a href="/loveforSFF.com/tutorials/">Tutorials</a></li>
+                    <li><a href="/loveforSFF.com/news/">News</a></li>
+                </ul>
+            </nav>
+            <form id="search-form" action="/loveforSFF.com/search" method="GET">
+                <div class="search-container">
+                    <input type="text" id="search-input" name="q" placeholder="Search articles...">
+                    <button type="submit" id="search-button">Search</button>
+                    
+                    <div id="search-results-container" style="display: none;">
+                        <ul id="search-results"></ul>
+                    </div>
+                </div>
+            </form>
+            <ul id="search-results"></ul>
+        </div>
+    </div>
+</header>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<button id="theme-toggle" class="theme-toggle">
+    <span class="material-icons" id="theme-icon">dark_mode</span>
+</button>
+
+    <main class="container">
+        <div class="search-results-page">
+            <h1>Search Results</h1>
+            <div id="search-results-container">
+                <div id="results-count" class="results-count"></div>
+                <div id="search-results" class="search-results-list"></div>
+                <div id="pagination-controls" class="pagination"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>&copy; 2025 Love For SFF. All Rights Reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const RESULTS_PER_PAGE = 7;
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = decodeURIComponent(urlParams.get('q') || '');
+        const currentPage = parseInt(urlParams.get('page')) || 1;
+
+        let lunrIndex;
+        let pagesIndex;
+
+        
+        fetch('/loveforSFF.com/index.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                pagesIndex = data;
+                lunrIndex = lunr(function() {
+                    this.ref('url');
+                    this.field('title', { boost: 10 });
+                    this.field('content');
+                    this.metadataWhitelist = ['position'];
+                    pagesIndex.forEach(page => this.add(page));
+                });
+                performSearch(query);
+            })
+            .catch(error => {
+                console.error('Error loading search index:', error);
+                document.getElementById('results-count').innerHTML = 'Search temporarily unavailable';
+            });
+
+        function performSearch(query) {
+            try {
+                const wildcardQuery = query.split(' ').map(term => `${term}*`).join(' ');
+                const results = lunrIndex.search(wildcardQuery)
+                    .map(result => pagesIndex.find(page => page.url === result.ref));
+                
+                if (!results.length) {
+                    document.getElementById('results-count').innerHTML = `No results found for "${query}"`;
+                    return;
+                }
+                
+                displayResults(results, currentPage);
+                setupPagination(results, currentPage);
+            } catch (error) {
+                console.error('Search error:', error);
+                document.getElementById('results-count').innerHTML = 'Error performing search';
+            }
+        }
+
+        function displayResults(results, page) {
+            const start = (page - 1) * RESULTS_PER_PAGE;
+            const end = start + RESULTS_PER_PAGE;
+            const paginatedResults = results.slice(start, end);
+            
+            const resultsContainer = document.getElementById('search-results');
+            const countContainer = document.getElementById('results-count');
+            
+            countContainer.innerHTML = `Found ${results.length} results for "${query}"`;
+            resultsContainer.innerHTML = '';
+
+            paginatedResults.forEach(result => {
+                const div = document.createElement('div');
+                div.className = 'search-result';
+                div.innerHTML = `
+                    <h3><a href="${result.url.replace('/loveforSFF.com', '')}">${result.title}</a></h3>
+                    <p class="result-excerpt">${result.content.substring(0, 200)}...</p>
+                `;
+                resultsContainer.appendChild(div);
+            });
+        }
+
+        function setupPagination(results, currentPage) {
+            const totalPages = Math.ceil(results.length / RESULTS_PER_PAGE);
+            const paginationContainer = document.getElementById('pagination-controls');
+            paginationContainer.innerHTML = '';
+
+            
+            if (currentPage > 1) {
+                const prevLink = document.createElement('a');
+                prevLink.className = 'pagination-link';
+                prevLink.href = `?q=${encodeURIComponent(query)}&page=${currentPage - 1}`;
+                prevLink.textContent = '← Previous';
+                paginationContainer.appendChild(prevLink);
+            }
+
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.className = `pagination-link ${i === currentPage ? 'active' : ''}`;
+                pageLink.href = `?q=${encodeURIComponent(query)}&page=${i}`;
+                pageLink.textContent = i;
+                paginationContainer.appendChild(pageLink);
+            }
+
+            
+            if (currentPage < totalPages) {
+                const nextLink = document.createElement('a');
+                nextLink.className = 'pagination-link';
+                nextLink.href = `?q=${encodeURIComponent(query)}&page=${currentPage + 1}`;
+                nextLink.textContent = 'Next →';
+                paginationContainer.appendChild(nextLink);
+            }
+        }
+    });
+    </script>
+</body>
+</html>

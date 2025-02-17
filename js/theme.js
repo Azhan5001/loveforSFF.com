@@ -37,13 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
         startX = event.clientX;
         startY = event.clientY;
 
-        document.addEventListener(e.type === "touchstart" ? "touchmove" : "mousemove", onMove);
+        const isTouch = e.type === "touchstart";
+        const moveEvent = isTouch ? "touchmove" : "mousemove";
+        const endEvent = isTouch ? "touchend" : "mouseup";
+
+        document.addEventListener(moveEvent, onMove);
+        document.addEventListener(endEvent, endDrag);
+        document.addEventListener(endEvent, savePosition);
     }
 
     function endDrag(e) {
-        document.removeEventListener("mousemove", onMove);
-        document.removeEventListener("touchmove", onMove);
-
         const event = e.changedTouches ? e.changedTouches[0] : e;
         if (Math.abs(event.clientX - startX) > 5 || Math.abs(event.clientY - startY) > 5) {
             isDragging = true;
@@ -57,6 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
             themeIcon.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
             localStorage.setItem('theme', newTheme);
         }
+
+        const isTouch = e.type === "touchend";
+        const moveEvent = isTouch ? "touchmove" : "mousemove";
+        const endEvent = isTouch ? "touchend" : "mouseup";
+
+        document.removeEventListener(moveEvent, onMove);
+        document.removeEventListener(endEvent, endDrag);
+        document.removeEventListener(endEvent, savePosition);
     }
 
     function onMove(e) {
@@ -76,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         themeToggle.style.right = 'auto';
     }
 
-    function savePosition() {
+    function savePosition(e) {
         if (isDragging) {
             localStorage.setItem(
                 'themeTogglePosition',
@@ -108,12 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Attach Event Listeners
     themeToggle.addEventListener('mousedown', startDrag);
     themeToggle.addEventListener('touchstart', startDrag);
-
-    document.addEventListener('mouseup', endDrag);
-    document.addEventListener('touchend', endDrag);
-
-    document.addEventListener('mouseup', savePosition);
-    document.addEventListener('touchend', savePosition);
 
     window.addEventListener('resize', adjustPosition);
 });

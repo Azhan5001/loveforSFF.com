@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 searchResultsContainer.style.display = 'block'; // Show results
             }
         });
-        
         document.addEventListener('click', (e) => {
             if (!searchContainer.contains(e.target)) {
                 searchResultsContainer.style.display = 'none';

@@ -1,18 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><script src="/loveforSFF.com/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=loveforSFF.com/livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Optimize Cooling in Mini-ITX Builds - Love For SFF</title>
-    <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
-    <link rel="stylesheet" href="/loveforSFF.com/css/styles.css" type="text/css">
-    <script src="/loveforSFF.com/js/search.js" defer></script>
-    <script src="/loveforSFF.com/js/theme.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>How to Optimize Cooling in Mini-ITX Builds - Love For SFF</title>
+
+  
+  <meta name="description" content="Learn how to optimize cooling in your Mini-ITX build. From airflow management to component selection, we cover everything you need to keep your SFF PC cool and quiet.">
+
+  
+  <link rel="canonical" href="http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md/">
+
+  
+  <meta property="og:title" content="How to Optimize Cooling in Mini-ITX Builds">
+  <meta property="og:description" content="Learn how to optimize cooling in your Mini-ITX build. From airflow management to component selection, we cover everything you need to keep your SFF PC cool and quiet.">
+  <meta property="og:url" content="http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/loveforSFF.com/images/testimage.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Optimize Cooling in Mini-ITX Builds">
+  <meta name="twitter:description" content="Learn how to optimize cooling in your Mini-ITX build. From airflow management to component selection, we cover everything you need to keep your SFF PC cool and quiet.">
+  <meta name="twitter:image" content="/loveforSFF.com/images/testimage.png">
+
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "How to Optimize Cooling in Mini-ITX Builds",
+          "image": [
+            "\/loveforSFF.com\/images\/testimage.png"
+          ],
+          "datePublished": "2024-01-15T00:00:00Z",
+          "dateModified": "2024-01-15T00:00:00Z",
+          "author": {
+            "@type": "Person",
+            "name": ""
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Love For SFF",
+            "logo": {
+              "@type": "ImageObject",
+              "url": ""
+            }
+          },
+          "description": "Learn how to optimize cooling in your Mini-ITX build. From airflow management to component selection, we cover everything you need to keep your SFF PC cool and quiet."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "http:\/\/localhost:1313\/loveforSFF.com\/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tutorials",
+              "item": "http:\/\/localhost:1313\/loveforSFF.com\/tutorials/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Optimize Cooling in Mini-ITX Builds",
+              "item": "http:\/\/localhost:1313\/loveforSFF.com\/tutorials\/optimize-cooling.md\/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     
+  
+  <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+  <link rel="stylesheet" href="/loveforSFF.com/css/styles.css" type="text/css">
+  <script src="/loveforSFF.com/js/search.js" defer></script>
+  <script src="/loveforSFF.com/js/theme.js"></script>
 </head>
 <body>
-    
-    <header>
+  
+  <header>
     <div id="headerMain">
         <div id="navLogo">
             <a href="/loveforSFF.com/index.html"><img src="/loveforSFF.com/images/whiteandblackLogoOnly.png" alt="logo.png"></a>
@@ -33,51 +109,51 @@
                     <li><a href="/loveforSFF.com/news/">News</a></li>
                 </ul>
             </nav>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search...">
-                <button id="search-button">Search</button>
-                <div id="search-results-container">
-                    <ul id="search-results"></ul>
+                <div class="search-container">
+                    <input type="text" id="search-input" name="q" placeholder="Search articles..." autocomplete="off">
+                    <button type="submit" id="search-button">Search</button>
+                    <div id="search-results-container" style="display: none;">
+                        <ul id="search-results"></ul>
+                    </div>
                 </div>
-            </div>
             <ul id="search-results"></ul>
         </div>
     </div>
 </header>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <button id="theme-toggle" class="theme-toggle">
     <span class="material-icons" id="theme-icon">dark_mode</span>
 </button>
 
-    
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="/loveforSFF.com/index.html">Home</a> &gt;
-            
-            <a href="/loveforSFF.com/tutorials/">Tutorials</a>
-            
-            &gt; How to Optimize Cooling in Mini-ITX Builds
-        </div>
-    </nav>
+  
+  <nav class="breadcrumb">
+    <div class="container">
+      <a href="/loveforSFF.com/index.html">Home</a> &gt;
+      
+        <a href="/loveforSFF.com/tutorials/">Tutorials</a>
+      
+      &gt; How to Optimize Cooling in Mini-ITX Builds
+    </div>
+  </nav>
 
-    
-    <main class="container">
-        <article>
-            
-                <div class="article-header">
-                    <div class="article-header-image" style="background-image: url('/loveforSFF.com/images/testimage.png')">
-                        <div class="article-header-content">
-                            <h1>How to Optimize Cooling in Mini-ITX Builds</h1>
-                        </div>
-                    </div>
-                </div>
-            
-                
-            
-            
-                <div class="toc-container">
-                    <h4>Table of Contents</h4>
-                    <nav id="TableOfContents">
+  
+  <main class="container">
+    <article>
+      
+        <div class="article-header">
+          <div class="article-header-image" style="background-image: url('/loveforSFF.com/images/testimage.png')">
+            <div class="article-header-content">
+              <h1>How to Optimize Cooling in Mini-ITX Builds</h1>
+            </div>
+          </div>
+        </div>
+      
+
+      
+      
+        <div class="toc-container">
+          <h4>Table of Contents</h4>
+          <nav id="TableOfContents">
   <ul>
     <li><a href="#1-choose-the-right-case"><strong>1. Choose the Right Case</strong></a></li>
     <li><a href="#2-optimize-airflow"><strong>2. Optimize Airflow</strong></a>
@@ -106,11 +182,11 @@
     <li><a href="#conclusion"><strong>Conclusion</strong></a></li>
   </ul>
 </nav>
-                </div>
-            
+        </div>
+      
 
-            <div class="article-content">
-                <p>Building a Mini-ITX PC is a rewarding experience, but it comes with its own set of challenges—chief among them is <strong>cooling</strong>. With limited space and high-performance components, keeping your system cool can be tricky. In this guide, we’ll walk you through the best practices for optimizing cooling in your Mini-ITX build.</p>
+      <div class="article-content">
+        <p>Building a Mini-ITX PC is a rewarding experience, but it comes with its own set of challenges—chief among them is <strong>cooling</strong>. With limited space and high-performance components, keeping your system cool can be tricky. In this guide, we’ll walk you through the best practices for optimizing cooling in your Mini-ITX build.</p>
 <hr>
 <h2 id="1-choose-the-right-case"><strong>1. Choose the Right Case</strong></h2>
 <p>The foundation of good cooling starts with the case. Not all Mini-ITX cases are created equal when it comes to airflow. Look for cases with:</p>
@@ -214,12 +290,15 @@
 <p>With these tips, your Mini-ITX build will stay cool and perform at its best. Happy building!</p>
 <hr>
 
-            </div>
-        </article>
-    </main>
+      </div>
 
-    
-    <footer>
+      
+      
+    </article>
+  </main>
+
+  
+  <footer>
     <div class="container">
         <p>&copy; 2025 Love For SFF. All Rights Reserved.</p>
         <div>
