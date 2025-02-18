@@ -35,6 +35,27 @@
     <loc>http://localhost:1313/loveforSFF.com/tags/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/budget-builds/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/categories/budget-builds/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/categories/build-guides/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/build-guides/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/pc-building/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/sff-pc/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,9 +69,6 @@
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/categories/gpu/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md---copy/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md/</loc>
@@ -67,11 +85,5 @@
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/categories/tutorials/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</loc>
-    <lastmod>2023-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/build-guides/</loc>
-    <lastmod>2023-10-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>
