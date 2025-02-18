@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SFF PC on Love For SFF</title>
+    <link>http://localhost:1313/loveforSFF.com/tags/sff-pc/</link>
+    <description>Recent content in SFF PC on Love For SFF</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/loveforSFF.com/tags/sff-pc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Budget SFF PC: Building a High-Performance Small Form Factor PC Without Breaking the Bank</title>
+      <link>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/build-guides/budget-sff-pc/</guid>
+      <description>&lt;p&gt;Building a &lt;strong&gt;small form factor (SFF) PC&lt;/strong&gt; doesn&amp;rsquo;t have to drain your wallet. With smart planning and careful component choices, you can put together a compact yet high-performance system that stays within your budget. In this guide, we&amp;rsquo;ll walk you through the top budget components for an SFF build in 2024 and share tips to save money without sacrificing performance.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-build-a-budget-sff-pc&#34;&gt;Why Build a Budget SFF PC?&lt;/h2&gt;&#xA;&lt;p&gt;Small form factor PCs are ideal for gamers, content creators, and professionals who need a powerful machine in a portable package. Although SFF builds can sometimes be expensive due to specialized parts, focusing on value-driven components lets you create a sleek, compact system without overspending.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

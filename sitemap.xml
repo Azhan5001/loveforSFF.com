@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/2025/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/loveforSFF.com/reviews/mini-itx-cases/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/reviews/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/categories/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/compact-builds/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/categories/hardware/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/mini-itx/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/categories/pc-cases/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/reviews/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/tags/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/loveforSFF.com/news/new-compact-gpus/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</loc>
@@ -29,28 +50,16 @@
     <loc>http://localhost:1313/loveforSFF.com/categories/gpu/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/categories/hardware/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md---copy/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tutorials/optimize-cooling.md/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/tags/mini-itx/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/loveforSFF.com/news/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tags/sff-builds/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/loveforSFF.com/tags/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/loveforSFF.com/tutorials/</loc>
