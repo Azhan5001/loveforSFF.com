@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Love For SFF</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/loveforSFF.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compact GPUs</title>
+      <link>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PC Hardware</title>
+      <link>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SFF Builds</title>
+      <link>http://localhost:1313/loveforSFF.com/tags/sff-builds/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/loveforSFF.com/tags/sff-builds/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Budget Builds</title>
       <link>http://localhost:1313/loveforSFF.com/tags/budget-builds/</link>
@@ -51,30 +72,9 @@
       <description></description>
     </item>
     <item>
-      <title>PC Hardware</title>
-      <link>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</link>
-      <pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/loveforSFF.com/tags/pc-hardware/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Compact GPUs</title>
-      <link>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</link>
-      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/loveforSFF.com/tags/compact-gpus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SFF Builds</title>
-      <link>http://localhost:1313/loveforSFF.com/tags/sff-builds/</link>
-      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/loveforSFF.com/tags/sff-builds/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Cooling</title>
       <link>http://localhost:1313/loveforSFF.com/tags/cooling/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/loveforSFF.com/tags/cooling/</guid>
       <description></description>
     </item>

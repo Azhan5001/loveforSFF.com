@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="Build-Guides">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://localhost:1313/loveforSFF.com/">
-  
+    
     
     
     <script type="application/ld+json">
@@ -151,13 +151,38 @@
   </main>
 
   <footer>
-    <div class="container">
-        <p>&copy; 2025 Love For SFF. All Rights Reserved.</p>
-        <div>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contact</a>
+    <div class="container-footer-content">        
+        
+        <div class="footer-section newsletter-section">
+            <div id="newsletter-form"></div>
         </div>
     </div>
+    <div class="footer-section">
+        <p>&copy; 2025 Love For SFF. All Rights Reserved.</p>
+
+    </div>
+
+    
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const formScript = document.createElement('script');
+        formScript.async = true;
+        formScript.src = 'https://eomail6.com/form/a11a2c9c-eeaf-11ef-ab86-8976fb54e18c.js';
+        formScript.dataset.form = 'a11a2c9c-eeaf-11ef-ab86-8976fb54e18c';
+        document.getElementById('newsletter-form').appendChild(formScript);
+    });
+
+    
+    let visitCount = localStorage.getItem('visitCount') || 0;
+    if (visitCount % 5 === 0) {
+        const splashScript = document.createElement('script');
+        splashScript.src = 'https://eomail6.com/form/ac8bb24c-eeac-11ef-b5b2-4195b4b083c8.js';
+        splashScript.dataset.form = 'ac8bb24c-eeac-11ef-b5b2-4195b4b083c8';
+        document.body.appendChild(splashScript);
+    }
+    localStorage.setItem('visitCount', Number(visitCount) + 1);
+    </script>
 </footer>
 </body>
 </html>

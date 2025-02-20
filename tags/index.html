@@ -44,6 +44,12 @@
         <h1>Tags</h1>
         <ul>
             
+                <li><a href="/loveforSFF.com/tags/compact-gpus/">Compact GPUs</a></li>
+            
+                <li><a href="/loveforSFF.com/tags/pc-hardware/">PC Hardware</a></li>
+            
+                <li><a href="/loveforSFF.com/tags/sff-builds/">SFF Builds</a></li>
+            
                 <li><a href="/loveforSFF.com/tags/budget-builds/">Budget Builds</a></li>
             
                 <li><a href="/loveforSFF.com/tags/pc-building/">PC Building</a></li>
@@ -55,12 +61,6 @@
                 <li><a href="/loveforSFF.com/tags/compact-builds/">Compact Builds</a></li>
             
                 <li><a href="/loveforSFF.com/tags/mini-itx/">Mini-ITX</a></li>
-            
-                <li><a href="/loveforSFF.com/tags/pc-hardware/">PC Hardware</a></li>
-            
-                <li><a href="/loveforSFF.com/tags/compact-gpus/">Compact GPUs</a></li>
-            
-                <li><a href="/loveforSFF.com/tags/sff-builds/">SFF Builds</a></li>
             
                 <li><a href="/loveforSFF.com/tags/cooling/">Cooling</a></li>
             
@@ -75,6 +75,95 @@
             <a href="#">Contact</a>
         </div>
     </div>
+    
+    <div id="newsletter-container" style="display: none; position: fixed; bottom: 70px; right: 20px; width: 300px; height: 400px; z-index: 1000; background: transparent; border: none; overflow: hidden;">
+        <iframe 
+        id="emailoctopus-iframe"
+        style="width: 100%; height: 100%; border: none;"
+        sandbox="allow-scripts allow-forms allow-same-origin"
+        loading="lazy"
+        ></iframe>
+        <button id="close-btn" style="position: absolute; top: 10px; right: 10px; background: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 50%; cursor: pointer; z-index: 1002;">×</button>
+    </div>
+
+    <button id="subscribe-btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 1001; background: #ff4444; color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        Subscribe
+    </button>
+
+    <div class="privacy-notice" style="display: none; font-size: 0.8em; margin-top: 1rem;">
+        We use EmailOctopus for secure newsletter management. 
+        <a href="https://emailoctopus.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+    </div>
+    </footer>
+
+    <script>
+    
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    let formLoaded = false;
+    let isFormVisible = false;
+
+    
+    document.getElementById('close-btn').addEventListener('click', function() {
+        toggleFormVisibility(false);
+    });
+
+    
+    document.getElementById('subscribe-btn').addEventListener('click', function() {
+        toggleFormVisibility(!isFormVisible);
+    });
+
+    function toggleFormVisibility(show) {
+        const container = document.getElementById('newsletter-container');
+        isFormVisible = show;
+        container.style.display = show ? 'block' : 'none';
+        
+        if (show && !formLoaded) {
+        loadFormScript(currentTheme);
+        formLoaded = true;
+        }
+    }
+
+    function loadFormScript(theme) {
+        const iframe = document.getElementById('emailoctopus-iframe');
+        const formId = theme === 'dark' ? 
+        'a11a2c9c-eeaf-11ef-ab86-8976fb54e18c' : 
+        'de2b0c86-eece-11ef-942f-b16b518b031f';
+        
+        iframe.src = `https://eomail6.com/embed/${formId}?disable-cookies=true&privacy-link=true`;
+    }
+
+    
+    function handleThemeChange(newTheme) {
+        const wasVisible = isFormVisible;
+        if (wasVisible) toggleFormVisibility(false);
+        
+        currentTheme = newTheme;
+        formLoaded = false;
+        
+        if (wasVisible) {
+        loadFormScript(newTheme);
+        toggleFormVisibility(true);
+        }
+    }
+
+    
+    function toggleTheme() {
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        handleThemeChange(newTheme);
+    }
+
+    
+    let visitCount = localStorage.getItem('visitCount') || 0;
+    if (visitCount % 5 === 0) {
+        const splashScript = document.createElement('script');
+        splashScript.src = 'https://eomail6.com/form/ac8bb24c-eeac-11ef-b5b2-4195b4b083c8.js';
+        splashScript.dataset.form = 'ac8bb24c-eeac-11ef-b5b2-4195b4b083c8';
+        document.body.appendChild(splashScript);
+    }
+    localStorage.setItem('visitCount', Number(visitCount) + 1);
+    </script>
 </footer>
 </body>
 </html>
